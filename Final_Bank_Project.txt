@@ -1,0 +1,23 @@
+create table transactionTable(accno number(15),tid number(5),time TIMESTAMP,amount number(10,2),t_type varchar(10));
+
+
+
+CREATE  SEQUENCE s1
+  MINVALUE 1
+  MAXVALUE 999
+  START WITH 1
+  INCREMENT BY 1
+  CACHE 20;
+
+ insert into transactiontable values(1251,s1.nextval,SYSDATE,2000);
+
+
+
+CREATE SEQUENCE accnogenerator
+    START WITH 12345673
+    INCREMENT BY 1
+    CACHE 20;
+
+
+
+create table  bankaccount(accno number(10),name varchar(20),Balance number(15,2),Acctype varchar(10),Contact number(10),Address varchar(40),password varchar(15));

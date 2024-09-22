@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Transfer</title>
+    <style>
+        body {
+            background-image: url('sbi.png');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: 100px auto;
+        }
+        input[type="number"],
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="transferSer" method="post">
+            <label for="accno">Receiver's Bank Account:</label><br>
+            <input type="number" id="accno" name="accno" required><br><br>
+            <label for="amount">Transfer Amount:</label><br>
+            <input type="text" id="amount" name="amount" required pattern="\d+(\.\d{1,2})?" title="Please enter a valid amount. E.g., 100.00"><br><br>
+            <input type="submit" value="Transfer">
+        </form>
+    </div>
+</body>
+</html>

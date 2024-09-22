@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Success</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Include CSS for styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: #ffffff;
+            border: 1px solid #dcdcdc;
+            padding: 20px;
+            margin: auto;
+            width: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 150px;
+            height: auto;
+        }
+        h1 {
+            color: #2e8b57;
+        }
+        p {
+            color: #555555;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #2e8b57;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #256c43;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="sbi.png" alt="Bank Logo">
+        <h1>Transaction Successful!</h1>
+        <p>Your transaction has been completed successfully. The amount has been transferred to the specified account.</p>
+        <p>You will be redirected to the home page shortly.</p>
+        <a href="Application.html" class="button">Go to Home</a>
+        <script>
+            setTimeout(function() {
+                window.location.href = 'Application.html';
+            }, 5000); // Redirects after 5 seconds
+        </script>
+    </div>
+</body>
+</html>

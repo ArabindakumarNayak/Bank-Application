@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Customer Registration</title>
+    <style>
+        body {
+            background-image: url('sbi.png');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #2E5AAC;
+        }
+        table {
+            margin: 0 auto;
+        }
+        td {
+            padding: 10px;
+        }
+        input[type="text"], input[type="password"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"], input[type="reset"] {
+            background-color: #2E5AAC;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #1d3f7a;
+        }
+        .radio-container {
+            display: flex;
+            align-items: center;
+        }
+        .radio-container label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>New Customer Registration</h1>
+        <form action="register" method="post" onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td>Enter Your Name:</td>
+                    <td><input type="text" name="name" required></td>
+                </tr>
+                <tr>
+                    <td>Enter Your Contact Number:</td>
+                    <td><input type="number" name="contact" required></td>
+                </tr>
+                <tr>
+                    <td>Enter Initial Amount:</td>
+                    <td><input type="text" name="amount" required></td>
+                </tr>
+                <tr>
+                    <td>Choose Your Account Type:</td>
+                    <td>
+                        <div class="radio-container">
+                            <label><input type="radio" name="accountType" value="savings" required> Savings</label>
+                            <label><input type="radio" name="accountType" value="current"> Current</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Your Address:</td>
+                    <td><input type="text" name="address" required></td>
+                </tr>
+                <tr>
+                    <td>Enter Your Password:</td>
+                    <td><input type="password" name="password" minlength="8" required></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Register"></td>
+                    <td><input type="reset" value="Reset"></td>
+                </tr>
+            </table>
+        </form>
+        <a href="index.html">Already a customer? Log in here</a>
+    </div>
+    <script>
+        function validateForm() {
+            const name = document.querySelector('input[name="name"]').value;
+            const contact = document.querySelector('input[name="contact"]').value;
+            const amount = document.querySelector('input[name="amount"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+
+            if (!/^[a-zA-Z\s]+$/.test(name)) {
+                alert("Name must contain only letters and spaces.");
+                return false;
+            }
+
+            if (contact.length !== 10) {
+                alert("Contact number must be exactly 10 digits.");
+                return false;
+            }
+
+            if (!/^\d+(\.\d{1,2})?$/.test(amount) || parseFloat(amount) < 1000) {
+                alert("Initial amount must be a valid number and at least 1000.");
+                return false;
+            }
+
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return false;
+            }
+
+            return true;
+        }
+
+        document.querySelector('input[name="contact"]').addEventListener('input', function (e) {
+            if (this.value.length > 10) {
+                this.value = this.value.slice(0, 10);
+            }
+        });
+    </script>
+</body>
+</html>

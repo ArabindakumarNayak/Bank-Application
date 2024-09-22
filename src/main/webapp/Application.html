@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Services</title>
+    <style>
+        body {
+            background-image: url('sbi.png');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 10px;
+            width: calc(50% - 20px);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+        input[type="submit"].delete {
+            background-color: #f44336;
+            width: calc(100% - 20px);
+        }
+        input[type="submit"].delete:hover {
+            background-color: #d32f2f;
+        }
+        @media (max-width: 600px) {
+            input[type="submit"] {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="form-container">
+            <form action="appln" method="post">
+                <input type="submit" name="selection" value="Deposit" aria-label="Deposit">
+                <input type="submit" name="selection" value="Transfer" aria-label="Transfer">
+                <input type="submit" name="selection" value="Withdraw" aria-label="Withdraw">
+                <input type="submit" name="selection" value="All_Details" aria-label="All Details">
+                <input type="submit" name="selection" value="All_Transition" aria-label="All Transition">
+                <input type="submit" name="selection" value="Delete your Account" aria-label="Delete your Account" class="delete">
+            </form>
+        </div>
+    </main>
+</body>
+</html>
